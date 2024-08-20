@@ -3,12 +3,10 @@ export interface LoginForm {
   password: string;
 }
 
-
-
-export interface LoginResponse{
-  code: number,
+export interface LoginResponse {
+  code: number;
   data: {
-    token: string,
-    message: string
-  }
+    token: string;
+    message: string;
+  };
 }
