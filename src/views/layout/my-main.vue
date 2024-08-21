@@ -1,16 +1,16 @@
 <script setup lang="ts">
-import {onMounted, ref,nextTick} from "vue";
+import { onMounted, ref, nextTick } from "vue";
 import emitter from "@/utils/emitter";
-emitter.on('destroy-router-view',()=>{
-  if(!work.value){
-    return
+emitter.on("destroy-router-view", () => {
+  if (!work.value) {
+    return;
   }
-  work.value=false
-  nextTick(()=>{
-    work.value=true
-  })
-})
-let work=ref(true)
+  work.value = false;
+  nextTick(() => {
+    work.value = true;
+  });
+});
+let work = ref(true);
 </script>
 
 <template>

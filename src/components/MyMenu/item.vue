@@ -26,8 +26,7 @@ let children = computed(() => props.menu.children || []);
   </template>
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>
 
 <script lang="ts">
 export default {
