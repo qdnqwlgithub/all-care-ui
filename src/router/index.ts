@@ -39,35 +39,35 @@ export const routes = [
     },
     children: [
       {
-        path: '/product/trademark',
+        path: "/product/trademark",
         component: () => import("@/views/trademark/index.vue"),
-        name: 'trademark',
+        name: "trademark",
         meta: {
-          title: '品牌管理'
-        }
+          title: "品牌管理",
+        },
       },
       {
-        path: '/product/attr',
+        path: "/product/attr",
         component: () => import("@/views/attr/index.vue"),
-        name: 'trademark',
+        name: "trademark",
         meta: {
-          title: '属性管理'
-        }
-      }
-    ]
+          title: "属性管理",
+        },
+      },
+    ],
   },
   {
-    path: '/',
+    path: "/",
     component: () => import("@/views/layout/index.vue"),
     children: [
       {
-        path: '',
+        path: "",
         component: () => import("@/views/index.vue"),
         meta: {
           title: "首页",
         },
-      }
-    ]
+      },
+    ],
   },
   {
     path: "/login",

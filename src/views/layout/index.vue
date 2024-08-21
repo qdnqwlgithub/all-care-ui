@@ -5,18 +5,21 @@ import { useUserStore } from "@/store/modules/user";
 import MyMenu from "@/components/MyMenu/index.vue";
 let userStore = useUserStore();
 import MyMain from "@/views/layout/my-main.vue";
+import TapBar from './tabbar.vue'
 </script>
 
 <template>
   <div class="common-layout">
     <el-scrollbar>
       <el-container>
-        <el-header>Header</el-header>
+        <el-header>
+          <tap-bar/>
+        </el-header>
         <el-container>
-          <el-aside width="200px">
+          <el-aside width="auto">
             <my-menu :menus="userStore.menus" />
           </el-aside>
-          <el-container>
+          <el-container style="max-width: 100%">
             <el-main>
               <my-main />
             </el-main>
@@ -28,7 +31,4 @@ import MyMain from "@/views/layout/my-main.vue";
   </div>
 </template>
 
-<style scoped lang="scss">
-
-
-</style>
+<style scoped lang="scss"></style>

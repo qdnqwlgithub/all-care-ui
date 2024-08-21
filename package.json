@@ -16,9 +16,11 @@
     "commitlint": "commitlint --config commitlint.config.cjs -e -V"
   },
   "dependencies": {
+    "@element-plus/icons-vue": "^2.3.1",
     "axios": "^1.7.4",
     "element-plus": "^2.8.0",
     "lodash": "^4.17.21",
+    "mitt": "^3.0.1",
     "mockjs": "^1.1.0",
     "pinia": "^2.2.2",
     "pinia-plugin-persistedstate": "^3.2.1",

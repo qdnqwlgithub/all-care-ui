@@ -1,12 +1,22 @@
 <script setup lang="ts">
-import {onMounted} from "vue";
-
+import {onMounted, ref,nextTick} from "vue";
+import emitter from "@/utils/emitter";
+emitter.on('destroy-router-view',()=>{
+  if(!work.value){
+    return
+  }
+  work.value=false
+  nextTick(()=>{
+    work.value=true
+  })
+})
+let work=ref(true)
 </script>
 
 <template>
   <router-view v-slot="{ Component }">
     <transition>
-      <component :is="Component" />
+      <component v-if="work" :is="Component" />
     </transition>
   </router-view>
 </template>

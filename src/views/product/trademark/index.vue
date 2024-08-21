@@ -1,9 +1,5 @@
-<script setup lang="ts">
-</script>
+<script setup lang="ts"></script>
 
-<template>
-  trademark
-</template>
+<template>trademark</template>
 
-<style scoped lang="scss">
-</style>
+<style scoped lang="scss"></style>

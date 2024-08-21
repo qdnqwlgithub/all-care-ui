@@ -8,17 +8,11 @@ import { routes } from "@/router";
 // computed() 就是 getters
 // function() 就是 actions
 
-export const useUserStore = defineStore(
-  "user",
+export const useSettingStore = defineStore(
+  "setting",
   () => {
-    const token = ref("");
-
-    async function doLogin(loginForm: LoginForm): Promise<LoginResponse> {
-      return await login(loginForm);
-    }
-    const menus = routes;
-
-    return { token, doLogin, menus };
+    let collapse = ref(true);
+    return { collapse };
   },
   {
     persist: true,

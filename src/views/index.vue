@@ -1,10 +1,5 @@
-<script setup lang="ts">
+<script setup lang="ts"></script>
 
-</script>
+<template>home</template>
 
-<template>
-  home
-</template>
-
-<style scoped lang="scss">
-</style>
+<style scoped lang="scss"></style>
