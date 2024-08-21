@@ -1,5 +1,7 @@
 <script setup lang="ts"></script>
 
-<template>404.vue</template>
+<template>
+  <div>promission.vue</div>
+</template>
 
 <style scoped lang="scss"></style>

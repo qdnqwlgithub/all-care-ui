@@ -4,6 +4,7 @@ import { onMounted, computed } from "vue";
 import { useUserStore } from "@/store/modules/user";
 import MyMenu from "@/components/MyMenu/index.vue";
 let userStore = useUserStore();
+import MyMain from "@/views/layout/my-main.vue";
 </script>
 
 <template>
@@ -16,7 +17,9 @@ let userStore = useUserStore();
             <my-menu :menus="userStore.menus" />
           </el-aside>
           <el-container>
-            <el-main>Main</el-main>
+            <el-main>
+              <my-main />
+            </el-main>
             <el-footer>Footer</el-footer>
           </el-container>
         </el-container>
@@ -25,4 +28,7 @@ let userStore = useUserStore();
   </div>
 </template>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+
+
+</style>
