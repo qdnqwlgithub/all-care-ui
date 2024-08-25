@@ -1,5 +1,9 @@
 <script setup lang="ts">
 import { useSettingStore } from "@/store/modules/setting";
+import { useUserStore } from "@/store/modules/user";
+import { useRouter } from "vue-router";
+let router = useRouter();
+let userStore = useUserStore();
 let settingStore = useSettingStore();
 import { ArrowRight } from "@element-plus/icons-vue";
 import { Search, Refresh, FullScreen } from "@element-plus/icons-vue";
@@ -10,8 +14,12 @@ import emitter from "@/utils/emitter";
 const refreshRouteView = () => {
   emitter.emit("destroy-router-view");
 };
-import { useFullscreen } from '@vueuse/core'
-const { isFullscreen, enter, exit, toggle } = useFullscreen()
+import { useFullscreen } from "@vueuse/core";
+const { isFullscreen, enter, exit, toggle } = useFullscreen();
+const logout = () => {
+  userStore.doLogout();
+  router.push({ path: "/login", query: { redirect: `${route.path}` } });
+};
 </script>
 
 <template>
@@ -49,7 +57,7 @@ const { isFullscreen, enter, exit, toggle } = useFullscreen()
         </span>
         <template #dropdown>
           <el-dropdown-menu>
-            <el-dropdown-item>logout</el-dropdown-item>
+            <el-dropdown-item @click="logout">logout</el-dropdown-item>
           </el-dropdown-menu>
         </template>
       </el-dropdown>

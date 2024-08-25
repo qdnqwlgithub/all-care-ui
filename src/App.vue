@@ -3,8 +3,4 @@
   <router-view />
 </template>
 
-<style scoped lang="scss">
-div {
-  color: $myc;
-}
-</style>
+<style scoped lang="scss"></style>

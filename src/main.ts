@@ -14,7 +14,7 @@ for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
 }
 app.use(router);
 app.use(pinia);
-app.mount("#app");
 
-emitter.emit(`test`);
-emitter.emit(`test1`);
+import "./permission";
+
+app.mount("#app");

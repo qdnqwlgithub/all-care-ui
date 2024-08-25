@@ -40,7 +40,7 @@ export const routes = [
     children: [
       {
         path: "/product/trademark",
-        component: () => import("@/views/trademark/index.vue"),
+        component: () => import("@/views/product/trademark/index.vue"),
         name: "trademark",
         meta: {
           title: "品牌管理",
@@ -48,8 +48,8 @@ export const routes = [
       },
       {
         path: "/product/attr",
-        component: () => import("@/views/attr/index.vue"),
-        name: "trademark",
+        component: () => import("@/views/product/attr/index.vue"),
+        name: "attr",
         meta: {
           title: "属性管理",
         },
@@ -75,6 +75,7 @@ export const routes = [
     name: "login",
     meta: {
       title: "登陆",
+      noToken: true,
     },
   },
   {
@@ -83,6 +84,7 @@ export const routes = [
     name: "404",
     meta: {
       title: "404",
+      noToken: true,
     },
   },
   {
@@ -99,6 +101,7 @@ export const routes = [
     name: "any",
     meta: {
       hidden: true,
+      noToken: true,
     },
   },
 ];

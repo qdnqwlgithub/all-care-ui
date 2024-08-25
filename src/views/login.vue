@@ -5,8 +5,11 @@ import { useUserStore } from "@/store/modules/user";
 import { LoginResponse } from "@/api/user/type";
 import type { FormRules, FormInstance } from "element-plus";
 const userStore = useUserStore();
-
+import { useRoute } from "vue-router";
+let route = useRoute();
 const loginFormRef = ref<FormInstance>();
+import { useRouter } from "vue-router";
+let router = useRouter();
 // do not use same name with ref
 const form = reactive({
   username: "admin",
@@ -33,16 +36,17 @@ const onSubmit = async (formEl: FormInstance | undefined) => {
   if (!formEl) return;
   await formEl.validate((valid, fields) => {
     if (valid) {
-      userStore.doLogin(form).then((r: LoginResponse) => {
-        if (r.code == 200) {
-          userStore.token = r.data.token;
-          ElMessage({
-            message: "success",
-            type: "success",
-          });
-        } else {
-          ElMessage.error(`${r.data.message}`);
-        }
+      userStore.doLogin(form).then(() => {
+        router.push({ path: route.query?.redirect || "/" });
+        // if (r.code == 200) {
+        //   userStore.token = r.data.token;
+        //   ElMessage({
+        //     message: "success",
+        //     type: "success",
+        //   });
+        // } else {
+        //   ElMessage.error(`${r.data.message}`);
+        // }
       });
     } else {
       console.log(fields);
